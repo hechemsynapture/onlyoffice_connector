@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  #onlyoffice:
+    #image: onlyoffice/documentserver
+    #ports:
+      #- "8081:80"
+    #links:
+      #- onlyoffice-connector
+    #restart: always
+
+  onlyoffice-connector:
+    build: .
+    ports: 
+      - "3001:3001"
+    restart: always

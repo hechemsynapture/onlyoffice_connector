@@ -1,0 +1,22 @@
+<html>
+    <head>
+       <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    </head>
+<body>
+<div id="placeholder"></div>
+<script type="text/javascript" src="https://ng.synapture.fr/web-apps/apps/api/documents/api.js"></script>
+<script>
+config = {
+      "document": {
+        "fileType": "docx",
+        "key": "<%- key %>", 
+        "title": "Example Document Title.pdf",
+        "url": "https://ng.synapture.fr/onlyoffice-connector/getFile/"+"<%- filename %>"
+     },
+      "editorConfig": {
+      "callbackUrl": "https://ng.synapture.fr/onlyoffice-connector/track?filename="+"<%- filename %>"
+    }
+};
+var docEditor = new DocsAPI.DocEditor("placeholder", config);
+</script>
+</body>
